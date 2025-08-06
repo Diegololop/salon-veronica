@@ -1,0 +1,181 @@
+@media print {
+  /* Reset general */
+  * {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ocultar elementos no deseados */
+  .no-print,
+  button,
+  .fixed {
+    display: none !important;
+  }
+
+  /* Mostrar solo el contenido de impresión */
+  .print-order,
+  .print-order *,
+  .technical-print-order,
+  .technical-print-order * {
+    visibility: visible !important;
+  }
+
+  /* Configuración de la orden */
+  .print-order,
+  .technical-print-order {
+    position: relative !important;
+    width: 80mm !important;
+    padding: 5mm !important;
+    font-family: 'Arial', sans-serif !important;
+    line-height: 1.2 !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Forzar salto de página entre órdenes */
+  .page-break {
+    page-break-after: always !important;
+  }
+
+  /* Configuración de página */
+  @page {
+    size: 80mm auto !important;
+    margin: 0 !important;
+  }
+
+  /* Estilos de texto */
+  .print-order .text-3xl,
+  .technical-print-order .text-3xl {
+    font-size: 14pt !important;
+    line-height: 1.1 !important;
+    font-weight: bold !important;
+  }
+
+  .print-order .text-xl,
+  .technical-print-order .text-xl {
+    font-size: 12pt !important;
+    line-height: 1.1 !important;
+    font-weight: bold !important;
+  }
+
+  .print-order .text-sm,
+  .technical-print-order .text-sm {
+    font-size: 8pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-order .text-xs,
+  .technical-print-order .text-xs {
+    font-size: 7pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-order .text-[10px],
+  .technical-print-order .text-[10px] {
+    font-size: 6pt !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Espaciado */
+  .print-order .mb-6,
+  .technical-print-order .mb-6 {
+    margin-bottom: 4mm !important;
+  }
+
+  .print-order .mb-4,
+  .technical-print-order .mb-4 {
+    margin-bottom: 3mm !important;
+  }
+
+  .print-order .mb-3,
+  .technical-print-order .mb-3 {
+    margin-bottom: 2mm !important;
+  }
+
+  .print-order .mb-2,
+  .technical-print-order .mb-2 {
+    margin-bottom: 1.5mm !important;
+  }
+
+  .print-order .mb-1,
+  .technical-print-order .mb-1 {
+    margin-bottom: 1mm !important;
+  }
+
+  /* Bordes */
+  .print-order .border-b,
+  .technical-print-order .border-b {
+    border-bottom: 0.5pt solid black !important;
+    padding-bottom: 2mm !important;
+  }
+
+  .print-order .border-t,
+  .technical-print-order .border-t {
+    border-top: 0.5pt solid black !important;
+    padding-top: 1.5mm !important;
+  }
+
+  .print-order .border-b-2,
+  .technical-print-order .border-b-2 {
+    border-bottom: 1pt solid black !important;
+  }
+
+  /* Grid */
+  .print-order .grid,
+  .technical-print-order .grid {
+    display: grid !important;
+  }
+
+  .print-order .grid-cols-2,
+  .technical-print-order .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .print-order .gap-2,
+  .technical-print-order .gap-2 {
+    gap: 1.5mm !important;
+  }
+
+  /* Alineación */
+  .print-order .text-center,
+  .technical-print-order .text-center {
+    text-align: center !important;
+  }
+
+  .print-order .text-right,
+  .technical-print-order .text-right {
+    text-align: right !important;
+  }
+
+  /* Espaciado de listas */
+  .print-order ol,
+  .technical-print-order ol {
+    padding-left: 4mm !important;
+  }
+
+  .print-order li,
+  .technical-print-order li {
+    margin-bottom: 0.8mm !important;
+  }
+
+  /* Títulos de secciones */
+  .print-order .font-bold,
+  .technical-print-order .font-bold {
+    font-weight: bold !important;
+    font-size: 9pt !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Datos importantes */
+  .print-order .font-semibold,
+  .technical-print-order .font-semibold {
+    font-weight: 600 !important;
+  }
+
+  /* Evitar saltos de página dentro de secciones */
+  .print-order > div,
+  .technical-print-order > div {
+    page-break-inside: avoid !important;
+  }
+}

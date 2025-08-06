@@ -1,0 +1,111 @@
+// Función para generar órdenes de servicio de prueba
+export function generateTestOrders() {
+  const orders = [
+    {
+      id: 'test-order-1',
+      orderNumber: 1,
+      customerName: 'Juan Pérez',
+      customerPhone: '+56912345678',
+      customerAddress: 'Av. Providencia 1234, Santiago',
+      customerRut: '12345678-9',
+      equipmentType: 'smartphone',
+      brand: 'Samsung',
+      model: 'Galaxy S21',
+      imei: '123456789012345',
+      condition: 'Equipo con pantalla trizada, funciona correctamente. Sin cargador.',
+      description: 'Pantalla quebrada por caída. Táctil funciona parcialmente.',
+      technicalWork: 'Cambio de módulo de pantalla completo',
+      status: 'completed',
+      technicianId: 'tech-1',
+      quote: 180000,
+      advancePayment: 90000,
+      totalAmount: 180000,
+      createdAt: '2024-01-15T10:00:00Z'
+    },
+    {
+      id: 'test-order-2',
+      orderNumber: 2,
+      customerName: 'María González',
+      customerPhone: '+56987654321',
+      customerAddress: 'Los Leones 567, Providencia',
+      customerRut: '98765432-1',
+      equipmentType: 'laptop',
+      brand: 'Lenovo',
+      model: 'ThinkPad X1',
+      condition: 'Equipo completo, con cargador original. Bisagra derecha suelta.',
+      description: 'No enciende, al conectar el cargador la luz parpadea.',
+      technicalWork: 'Diagnóstico y posible cambio de placa de carga',
+      status: 'in_progress',
+      technicianId: 'tech-2',
+      quote: 120000,
+      advancePayment: 60000,
+      totalAmount: 120000,
+      createdAt: '2024-01-16T11:30:00Z'
+    },
+    {
+      id: 'test-order-3',
+      orderNumber: 3,
+      customerName: 'Pedro Soto',
+      customerPhone: '+56923456789',
+      customerAddress: 'Nueva Providencia 1901, Providencia',
+      customerRut: '11222333-4',
+      equipmentType: 'desktop',
+      brand: 'Custom PC',
+      model: 'Gaming Desktop',
+      condition: 'Torre completa con todos sus componentes',
+      description: 'Computador se reinicia al ejecutar juegos',
+      technicalWork: 'Limpieza completa, cambio de pasta térmica, diagnóstico de temperatura',
+      status: 'pending',
+      quote: 45000,
+      advancePayment: 0,
+      totalAmount: 45000,
+      createdAt: '2024-01-17T09:15:00Z'
+    },
+    {
+      id: 'test-order-4',
+      orderNumber: 4,
+      customerName: 'Ana Silva',
+      customerPhone: '+56934567890',
+      customerAddress: 'Manuel Montt 856, Providencia',
+      customerRut: '15678901-2',
+      equipmentType: 'smartphone',
+      brand: 'iPhone',
+      model: '13 Pro',
+      imei: '987654321098765',
+      condition: 'Equipo con carcasa protectora, sin cargador',
+      description: 'Batería dura menos de 2 horas con uso normal',
+      technicalWork: 'Cambio de batería original',
+      status: 'completed',
+      technicianId: 'tech-1',
+      quote: 89000,
+      advancePayment: 89000,
+      totalAmount: 89000,
+      createdAt: '2024-01-18T14:20:00Z'
+    },
+    {
+      id: 'test-order-5',
+      orderNumber: 5,
+      customerName: 'Roberto Muñoz',
+      customerPhone: '+56945678901',
+      customerAddress: 'Suecia 123, Providencia',
+      customerRut: '13456789-0',
+      equipmentType: 'tablet',
+      brand: 'iPad',
+      model: 'Air 4',
+      condition: 'Equipo con pantalla en buen estado, botón home no funciona',
+      description: 'Botón home no responde, problemas para navegar',
+      technicalWork: 'Cambio de flex de botón home',
+      status: 'in_progress',
+      technicianId: 'tech-3',
+      quote: 75000,
+      advancePayment: 35000,
+      totalAmount: 75000,
+      createdAt: '2024-01-19T16:45:00Z'
+    }
+  ];
+
+  // Guardar en localStorage
+  localStorage.setItem('serviceOrders', JSON.stringify(orders));
+  
+  return orders;
+}
