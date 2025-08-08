@@ -13,17 +13,17 @@ export function Home() {
       <section
         className="relative bg-cover bg-center py-32 md:py-40"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=2070")',
+          backgroundImage: 'url("https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=2070")',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(28,164,223,0.9)] to-[rgba(160,198,51,0.8)]"></div>
         <div className="relative container mx-auto px-4 text-center text-white">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Bienvenida a <span className="text-secondary">Salon Veronica</span>
+              Servicio Técnico <span className="text-[rgba(160,198,51,1)]">Profesional</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 mx-auto">
-              Cortes de pelo, coloración, tratamientos y servicios de belleza en un ambiente acogedor y profesional.
+              Expertos en reparación de dispositivos con soluciones rápidas y garantizadas.
             </p>
             {showReserveButton && (
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
