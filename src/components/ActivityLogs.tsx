@@ -13,7 +13,7 @@ interface ActivityLog {
   quantity_affected: number;
   cost_price_affected: number;
   component_type_id: number;
-  service_order: string; // Nuevo campo
+  cita_id: string; // Nuevo campo
   created_at: string;
 }
 
@@ -30,7 +30,7 @@ export function ActivityLogs() {
     try {
       setLoading(true);
   
-      // Obtener los logs con user_id y service_order
+      // Obtener los logs con user_id y cita_id
       const { data: logsData, error: logsError } = await supabase
         .from('activity_logs')
         .select('*')
@@ -71,7 +71,7 @@ export function ActivityLogs() {
 
   return (
     <div className="max-w-7xl mx-auto px-3 py-7 bg-gray-100 min-h-screen rounded-lg">
-      <h1 className="text-2xl font-bold mb-6">Registro de Actividades</h1>
+      <h1 className="text-2xl font-bold mb-6">Registro de Actividades - Salón Veronica</h1>
       <table className="min-w-full bg-white border">
         <thead>
           <tr>
@@ -81,7 +81,7 @@ export function ActivityLogs() {
             <th className="px-4 py-2 border">Modelo</th>
             <th className="px-4 py-2 border">Cantidad</th>
             <th className="px-4 py-2 border">Precio</th>
-            <th className="px-4 py-2 border">Orden de Servicio</th> {/* Nueva columna */}
+            <th className="px-4 py-2 border">Cita</th> {/* Nueva columna */}
             <th className="px-4 py-2 border">Fecha</th>
           </tr>
         </thead>
@@ -94,7 +94,7 @@ export function ActivityLogs() {
               <td className="px-4 py-2 border">{log.model}</td>
               <td className="px-4 py-2 border">{log.quantity_affected}</td>
               <td className="px-4 py-2 border">${log.cost_price_affected}</td>
-              <td className="px-4 py-2 border">{log.service_order || 'N/A'}</td> {/* Mostrar el número de orden */}
+              <td className="px-4 py-2 border">{log.cita_id || 'N/A'}</td> {/* Mostrar el número de cita */}
               <td className="px-4 py-2 border">{new Date(log.created_at).toLocaleString()}</td>
             </tr>
           ))}

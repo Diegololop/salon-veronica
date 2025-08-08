@@ -25,27 +25,39 @@ export function Header() {
         <nav className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <img
-                src={businessInfo.logoUrl} // Use config
-                alt={`Logo ${businessInfo.name}`} // Use config
-                className="h-12"
-              />
+            <Link to="/" className="flex items-center gap-3">
+              {/* Lucide icon for beauty */}
+              <span className="bg-primary rounded-full p-2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#a8d4c4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span className="text-2xl font-bold text-primary">Salon Veronica</span>
             </Link>
 
             {/* Menú para escritorio */}
             <div className="hidden md:flex items-center space-x-6">
               <Link 
                 to="/" 
-                className="text-gray-700 hover:text-[rgba(28,164,223,1)] transition-colors font-medium"
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
               >
                 Inicio
               </Link>
               <Link 
                 to="/servicios" 
-                className="text-gray-700 hover:text-[rgba(28,164,223,1)] transition-colors font-medium"
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
               >
                 Servicios
+              </Link>
+              <Link 
+                to="/agenda" 
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
+              >
+                Agenda
+              </Link>
+              <Link 
+                to="/sobre-nosotros" 
+                className="text-gray-700 hover:text-primary transition-colors font-medium"
+              >
+                Sobre Nosotros
               </Link>
               
               {user ? (

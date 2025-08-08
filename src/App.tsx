@@ -15,6 +15,9 @@ import { useLocation } from 'react-router-dom';
 import { Inventario } from './components/Inventario';
 import { PedidoPantallas } from './components/PedidoPantallas';
 import { ActivityLogs } from './components/ActivityLogs';
+import { CalendarView } from './features/agenda/CalendarView';
+import { CreateAppointmentForm } from './features/agenda/CreateAppointmentForm';
+import { useAppointmentsAPI } from './features/agenda/useAppointmentsAPI';
 import ServiceReports from './components/ServiceReports';
 import  ComingSoonPage  from './components/ComingSoonPage'; // Importa el componente de la página de espera
 import { Toaster } from 'react-hot-toast'; 
@@ -34,6 +37,7 @@ function App() {
   // Variable para controlar si el sitio está en modo "próximamente"
   const isComingSoon = false; // Cambia a `false` cuando quieras que el sitio esté activo
 
+  const appointmentsAPI = useAppointmentsAPI();
   return (
     <div className="flex flex-col min-h-screen">
       {/* Define la posición y apariencia de todos los pop-ups */}
@@ -101,6 +105,22 @@ function App() {
             <Route path="/inventario" element={<Inventario />} />
             <Route path="/pedido-pantallas" element={<PedidoPantallas />} />
             <Route path="/activity-logs" element={<ActivityLogs />} />
+            <Route path="/agenda" element={
+              <div className="max-w-7xl mx-auto px-3 py-7 bg-gray-100 min-h-screen rounded-lg">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <CalendarView citas={appointmentsAPI.citas} />
+                  </div>
+                  <div>
+                    <CreateAppointmentForm 
+                      onSubmit={appointmentsAPI.addCita}
+                      empleados={["Veronica", "Carla", "Sofia"]}
+                      servicios={[{id: "svc_01", nombre: "Corte Mujer", duracion: 45, precio: 12000}, {id: "svc_02", nombre: "Coloración", duracion: 60, precio: 18000}]}
+                    />
+                  </div>
+                </div>
+              </div>
+            } />
             <Route path="/informes" element={<ServiceReports />} />
 
             <Route path="/decision-presupuesto/:orden_id" element={<DecisionPage />} />
